@@ -4,14 +4,17 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class turnBased {
-
     private static Stack<String> items = new Stack<>();
     private static Scanner scanner = new Scanner(System.in);
     private static int[] shields = {1, 1, 1, 1, 1};
     private static Random r = new Random();
     private static int playerHp = 100, enemyHp = 100;
 
+
+
     public static void main(String[] args) {
+
+
     //Item list
         items.add("Sting");
         items.add("Mighty Pula");
@@ -131,9 +134,7 @@ public class turnBased {
 
         boolean enemyStunned = false;
 
-
         //Replayability
-
         while (true) {
 
             System.out.println("+-----------------------------------+");
@@ -142,6 +143,7 @@ public class turnBased {
             System.out.println("|         [A Turn Based Game]       |");
             System.out.println("|                                   |");
             System.out.println("+-----------------------------------+");
+            System.out.println("Current location: " + oppLastName.get(r.nextInt(oppLastName.size())));
 
             //Player name
             System.out.print("Enter your name: ");
@@ -232,14 +234,13 @@ public class turnBased {
                                 System.out.println("Lamat sa pagdula!");
                                 break;
                             }
-
+                        }
                         }
                     }
-
                 }
-            }
-    }
-}
+                
+                
+        }
 
     // Health bar representation
     static String getHealthBar(int hp) {
@@ -282,6 +283,7 @@ public class turnBased {
         checkFood(1);
     }
 }
+        
 
     static void checkFood(int target) {
         if (items.empty() && target == 1) {
@@ -320,8 +322,6 @@ public class turnBased {
 
     static void useShield() {
         System.out.println("shield used");
-    }
-}
-
-        
+            }
+        }
             
